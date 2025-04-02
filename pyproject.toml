@@ -1,0 +1,93 @@
+[project]
+    authors = [
+        { name = "Carlos Eduardo Ferreyra", email = "eduferreyraok@gmail.com" },
+    ]
+    dependencies = [
+        "marimo[lsp,recommended]>=0.12.0",
+        "pytest-cov>=4.1.0",
+        "pytest>=7.4.0",
+    ]
+    name = "marimo-notebooks"
+    requires-python = ">=3.10"
+    version = "0.1.0"
+
+[tool.marimo.ai]
+    rules = """
+- Always use type hints
+- polars over pandas
+- always output with marimo.ui module
+"""
+
+[tool.marimo.ai.anthropic]
+
+[tool.marimo.ai.google]
+
+[tool.marimo.ai.open_ai]
+    model = "claude-3.5-sonnet"
+
+[tool.marimo.completion]
+    activate_on_typing = true
+    copilot            = "github"
+
+[tool.marimo.diagnostics]
+    enabled = true
+
+[tool.marimo.display]
+    cell_output           = "above"
+    code_editor_font_size = 14
+    dataframes            = "rich"
+    default_width         = "full"
+    theme                 = "system"
+
+[tool.marimo.experimental]
+    inline_ai_tooltip = true
+    lsp               = true
+    reactive_tests    = true
+    toplevel_defs     = true
+
+[tool.marimo.formatting]
+    line_length = 79
+
+[tool.marimo.keymap]
+    preset = "default"
+
+[tool.marimo.keymap.overrides]
+
+[tool.marimo.language_servers.pylsp]
+    enable_flake8     = false
+    enable_mypy       = true
+    enable_pydocstyle = false
+    enable_pyflakes   = false
+    enable_pylint     = false
+    enable_ruff       = true
+    enabled           = true
+
+[tool.marimo.package_management]
+    manager = "uv"
+
+[tool.marimo.runtime]
+    auto_instantiate     = true
+    auto_reload          = "autorun"
+    on_cell_change       = "autorun"
+    output_max_bytes     = 8000000
+    pythonpath           = []
+    std_stream_max_bytes = 1000000
+    watcher_on_save      = "eager"
+
+[tool.marimo.save]
+    autosave       = "after_delay"
+    autosave_delay = 10000
+    format_on_save = true
+
+[tool.marimo.server]
+    browser        = "default"
+    follow_symlink = false
+
+[tool.marimo.snippets]
+    custom_paths             = []
+    include_default_snippets = true
+
+[tool.pytest.ini_options]
+    addopts      = "-v --cov=notebooks --cov=apps --cov-report=term-missing"
+    python_files = ["test_*.py"]
+    testpaths    = ["tests"]

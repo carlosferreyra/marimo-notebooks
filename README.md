@@ -1,52 +1,98 @@
-# marimo WebAssembly + GitHub Pages Template
+# Data Engineering Interactive Portfolio
 
-This template repository demonstrates how to export [marimo](https://marimo.io) notebooks to WebAssembly and deploy them to GitHub Pages.
+Welcome to my interactive data engineering portfolio! This repository showcases real-world data
+engineering implementations using [marimo](https://marimo.io) notebooks, demonstrating hands-on
+experience with cloud platforms and data processing pipelines.
 
-## 📚 Included Examples
+## 🎯 Portfolio Overview
 
-- `apps/charts.py`: Interactive data visualization with Altair
-- `notebooks/fibonacci.py`: Interactive Fibonacci sequence calculator
-- `notebooks/penguins.py`: Interactive data analysis with Polars and marimo
+This portfolio demonstrates practical implementations of data engineering concepts across major
+cloud platforms:
 
-## 🚀 Usage
+### Cloud Platform Implementations
 
-1. Fork this repository
-2. Add your marimo files to the `notebooks/` or `apps/` directory
-   1. `notebooks/` notebooks are exported with `--mode edit`
-   2. `apps/` notebooks are exported with `--mode run`
-3. Push to main branch
-4. Go to repository **Settings > Pages** and change the "Source" dropdown to "GitHub Actions"
-5. GitHub Actions will automatically build and deploy to Pages
+- `notebooks/GCP.py`: Google Cloud Platform implementations showcasing:
 
-## Including data or assets
+  - BigQuery data warehousing
+  - Cloud Storage data lakes
+  - Dataflow pipelines
+  - Cloud Functions for serverless ETL _(GCP Professional Data Engineer Certified)_
 
-To include data or assets in your notebooks, add them to the `public/` directory.
+- `notebooks/AWS.py`: Amazon Web Services implementations featuring:
 
-For example, the `apps/charts.py` notebook loads an image asset from the `public/` directory.
+  - S3 and Glue ETL workflows
+  - Redshift data warehousing
+  - Lambda for data processing
+  - EMR for big data processing
 
-```markdown
-<img src="public/logo.png" width="200" />
-```
+- `notebooks/Databricks.py`: Enterprise data processing featuring:
+  - Delta Lake architecture
+  - Spark SQL optimizations
+  - Data pipeline orchestration
+  - Real-time data processing
 
-And the `notebooks/penguins.py` notebook loads a CSV dataset from the `public/` directory.
+### Key Technical Highlights
 
-```python
-import polars as pl
-df = pl.read_csv(mo.notebook_location() / "public" / "penguins.csv")
-```
+- **Modern Data Stack**: Python, Polars, dbt, Airflow
+- **Data Processing**: ETL/ELT pipelines, batch/streaming processing
+- **Backend Integration**: RESTful APIs, microservices architecture
+- **Best Practices**: CI/CD, Infrastructure as Code, data testing
 
-## 🧪 Testing
+## 🚀 Interactive Demonstrations
 
-To test the export process, run `scripts/build.py` from the root directory.
+Each notebook is an interactive demonstration that you can run and modify:
+
+1. Data Pipeline Implementations
+2. Real-time Data Processing
+3. Data Quality Monitoring
+4. Performance Optimization
+5. API Integrations
+
+## 💡 Technical Background
+
+- Strong focus on backend development with Python
+- Experience in designing scalable data architectures
+- Expertise in cloud-native solutions
+- Emphasis on code quality and testing
+
+## 🛠️ Getting Started
+
+1. Clone this repository
+2. Install dependencies using `uv`:
+   ```bash
+   uv sync --all-extras
+   ```
+3. Run marimo:
 
 ```bash
-python scripts/build.py
+# Run as a notebook (development mode)
+marimo edit notebooks/GCP.py  # Interactive notebook interface
+
+# Run as an application (production mode)
+marimo run notebooks/GCP.py   # Standalone application view
 ```
 
-This will export all notebooks in a folder called `_site/` in the root directory. Then to serve the site, run:
+Choose the mode that best fits your needs:
 
-```bash
-python -m http.server -d _site
-```
+- `marimo edit`: Development environment with cell editing
+- `marimo run`: Production view for sharing and deployment
 
-This will serve the site at `http://localhost:8000`.
+## 📚 Project Structure
+
+- `notebooks/`: Interactive implementations of data engineering solutions
+- `tests/`: Comprehensive test suite for data pipelines
+- `apps/`: Production-ready data applications
+
+## 📊 Sample Data
+
+Sample datasets are included in the `public/` directory for demonstration purposes.
+
+## 🔗 Additional Resources
+
+- [GCP Data Engineering Best Practices](https://cloud.google.com/architecture/data-engineering-best-practices)
+- [Modern Data Stack Blog](https://www.datastacktalk.com/)
+- [Data Engineering Project Examples](https://github.com/topics/data-engineering)
+
+## 📫 Get in Touch
+
+Feel free to reach out for collaboration or questions about data engineering implementations!

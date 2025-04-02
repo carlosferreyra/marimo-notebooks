@@ -20,7 +20,7 @@ def _(mo):
 def _(mo):
     # Create an interactive slider
     n = mo.ui.slider(1, 100, value=50, label="Number of Fibonacci numbers")
-    n
+    n  # type: ignore
     return (n,)
 
 
@@ -39,13 +39,15 @@ def _():
         for i in range(2, n):
             sequence.append(sequence[i - 1] + sequence[i - 2])
         return sequence
+
     return (fibonacci,)
 
 
 @app.cell
 def _():
-    import numpy as np
     import marimo as mo
+    import numpy as np
+
     return mo, np
 
 
